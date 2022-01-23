@@ -1,4 +1,8 @@
 import React from 'react';
 import reactDom from 'react-dom';
-const element = React.createElement('iv',{className:"hi"},'wtf');
-reactDom.render(element,document.querySelector("#root"))
+const App = ()=>{
+    return(
+        <div className='pass'>hi</div>
+    )
+}
+reactDom.render(<App />,document.querySelector("#root"))
