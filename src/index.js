@@ -1,8 +1,3 @@
-import React from 'react';
 import reactDom from 'react-dom';
-const App = ()=>{
-    return(
-        <div className='pass'>hi</div>
-    )
-}
+import App from './App'
 reactDom.render(<App />,document.querySelector("#root"))
