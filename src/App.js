@@ -1,8 +1,11 @@
+import Product from "./Product";
 const App = () => {
   return (
     <div className="pass">
       <h1>Products</h1>
-      <p className="product">p1</p>
+      <Product price="200$" title="javascript course" >
+        this is a good javascript course
+      </Product>
     </div>
   );
 };
