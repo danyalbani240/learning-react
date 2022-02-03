@@ -38,6 +38,32 @@ class App extends React.Component {
             },
         ],
     };
+    reducePrice = () => {
+        this.setState({
+            products: [
+                {
+                    price: "100$",
+                    title: "javascript course",
+                },
+                {
+                    price: "200$",
+                    title: "Vue course",
+                },
+                {
+                    price: "300$",
+                    title: "Nuxt course",
+                },
+                {
+                    price: "400$",
+                    title: "Pwa course",
+                },
+                {
+                    price: "500$",
+                    title: "Design Pattern course",
+                },
+            ],
+        });
+    };
     render() {
         return (
             <div className="pass">
@@ -53,6 +79,7 @@ class App extends React.Component {
                         </Product>
                     );
                 })}
+                <button onClick={this.reducePrice}>Offer</button>
             </div>
         );
     }
