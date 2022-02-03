@@ -14,15 +14,47 @@ import Product from "./Product";
 // };
 //class component
 class App extends React.Component {
-  render() {
-    return (
-      <div className="pass">
-        <h1>Products</h1>
-        <Product price="200$" title="javascript course">
-          this is a good javascript course
-        </Product>
-      </div>
-    );
-  }
+    state = {
+        products: [
+            {
+                price: "200$",
+                title: "javascript course",
+            },
+            {
+                price: "300$",
+                title: "Vue course",
+            },
+            {
+                price: "400$",
+                title: "Nuxt course",
+            },
+            {
+                price: "500$",
+                title: "Pwa course",
+            },
+            {
+                price: "600$",
+                title: "Design Pattern course",
+            },
+        ],
+    };
+    render() {
+        return (
+            <div className="pass">
+                <h1>Products</h1>
+                {this.state.products.map((product) => {
+                    return (
+                        <Product
+                            key={product.title}
+                            price={product.price}
+                            title={product.title}
+                        >
+                            this is a good {product.title}
+                        </Product>
+                    );
+                })}
+            </div>
+        );
+    }
 }
 export default App;
