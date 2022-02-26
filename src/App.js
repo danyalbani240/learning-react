@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import HookCounter from "./HookCounter";
 import Product from "./Product";
 
 //functinal component
@@ -87,55 +88,55 @@ import Product from "./Product";
 
 //functional again
 const App = () => {
-    const [products, setProducts] = useState([
-        {
-            price: "100$",
-            title: "javascript course",
-        },
-        {
-            price: "200$",
-            title: "Vue course",
-        },
-        {
-            price: "300$",
-            title: "Nuxt course",
-        },
-        {
-            price: "400$",
-            title: "Pwa course",
-        },
-        {
-            price: "500$",
-            title: "Design Pattern course",
-        },
-    ]);
-    const reducePrice = () => {
-        setProducts([
-            {
-                price: "200$",
-                title: "javascript course",
-            },
-            {
-                price: "300$",
-                title: "Vue course",
-            },
-            {
-                price: "400$",
-                title: "Nuxt course",
-            },
-            {
-                price: "500$",
-                title: "Pwa course",
-            },
-            {
-                price: "550$",
-                title: "Design Pattern course",
-            },
-        ]);
-    };
+    // const [products, setProducts] = useState([
+    //     {
+    //         price: "100$",
+    //         title: "javascript course",
+    //     },
+    //     {
+    //         price: "200$",
+    //         title: "Vue course",
+    //     },
+    //     {
+    //         price: "300$",
+    //         title: "Nuxt course",
+    //     },
+    //     {
+    //         price: "400$",
+    //         title: "Pwa course",
+    //     },
+    //     {
+    //         price: "500$",
+    //         title: "Design Pattern course",
+    //     },
+    // ]);
+    // const reducePrice = () => {
+    //     setProducts([
+    //         {
+    //             price: "200$",
+    //             title: "javascript course",
+    //         },
+    //         {
+    //             price: "300$",
+    //             title: "Vue course",
+    //         },
+    //         {
+    //             price: "400$",
+    //             title: "Nuxt course",
+    //         },
+    //         {
+    //             price: "500$",
+    //             title: "Pwa course",
+    //         },
+    //         {
+    //             price: "550$",
+    //             title: "Design Pattern course",
+    //         },
+    //     ]);
+    // };
     return (
         <div className="pass">
-            <h1>Products</h1>
+            {/* <h1>Products</h1>
             {products.map((product) => {
                 return (
                     <Product
@@ -147,7 +148,8 @@ const App = () => {
                     </Product>
                 );
             })}
-            <button onClick={reducePrice}>Offer</button>
+            <button onClick={reducePrice}>Offer</button> */}
+            <HookCounter />
         </div>
     );
 };
