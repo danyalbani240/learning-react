@@ -5,10 +5,17 @@ const HookCounter = () => {
     const addOne = () => {
         setCount(count + 1);
     };
-
+    //there is an issue because it not work as we want;
+    // const addFive = () => {
+    //     for (let i = 0; i < 5; i++) {
+    //         setCount(count + 1);
+    //     }
+    // };
+    //the right way of doing this in react :
     const addFive = () => {
+        console.log(1);
         for (let i = 0; i < 5; i++) {
-            setCount(count + 1);
+            setCount((oldValue) => oldValue + 1);
         }
     };
 
