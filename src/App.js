@@ -151,7 +151,7 @@ const App = () => {
             })}
             <button onClick={reducePrice}>Offer</button> */}
             {/* <HookCounter /> */}
-            <HookObject />
+            {/* <HookObject /> */}
         </div>
     );
 };
