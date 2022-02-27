@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HookCounter from "./HookCounter";
 import HookObject from "./HookObject";
+import HookArray from "./HookArray";
 import Product from "./Product";
 
 //functinal component
@@ -152,6 +153,7 @@ const App = () => {
             <button onClick={reducePrice}>Offer</button> */}
             {/* <HookCounter /> */}
             {/* <HookObject /> */}
+            <HookArray />
         </div>
     );
 };
