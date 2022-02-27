@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 const HookObject = () => {
-    const userData = useState({
+    const [userData, setData] = useState({
         firstName: "",
         lastName: "",
     });
-    const changeHandler = () => {};
+    const changeHandler = (e) => {};
     return (
         <form>
             <input
