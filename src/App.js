@@ -31,6 +31,7 @@ class App extends React.Component {
             },
         ],
     };
+    //question why we can't use simple method for this?
     reducePrice = () => {
         this.setState({
             products: [
@@ -57,6 +58,33 @@ class App extends React.Component {
             ],
         });
     };
+    //let's try this.
+    reducePrice2() {
+        this.setState({
+            products: [
+                {
+                    price: "100$",
+                    title: "javascript course",
+                },
+                {
+                    price: "200$",
+                    title: "Vue course",
+                },
+                {
+                    price: "300$",
+                    title: "Nuxt course",
+                },
+                {
+                    price: "400$",
+                    title: "Pwa course",
+                },
+                {
+                    price: "500$",
+                    title: "Design Pattern course",
+                },
+            ],
+        });
+    }
     render() {
         return (
             <div className="container">
@@ -72,7 +100,7 @@ class App extends React.Component {
                         </Product>
                     );
                 })}
-                <button onClick={this.reducePrice}>Offer</button>
+                <button onClick={this.reducePrice2}>Offer</button>
             </div>
         );
     }
