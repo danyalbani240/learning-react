@@ -3,7 +3,7 @@ import HookCounter from "./HookCounter";
 import HookObject from "./HookObject";
 import HookArray from "./HookArray";
 import Product from "./Product";
-
+import "./App.css";
 //functinal component
 // const App = () => {
 //   return (
@@ -147,7 +147,7 @@ const App = () => {
         ]);
     };
     return (
-        <div className="pass">
+        <div className="container">
             <h1>Products</h1>
             {products.map((product) => {
                 return (
