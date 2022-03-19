@@ -8,7 +8,8 @@ import "./App.css";
 let me explain this commit.
 read this at the end of watching code
 in classed methods this is undefind so we should bind it in constructor like down here we did it.
-b
+but this is not the godd way because if we have lots of methods it will be bad wat's the best way?
+the first way we did it we should use arrow functions like simple reducePrice method
 
 */
 //class component
