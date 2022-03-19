@@ -4,7 +4,13 @@ import React, { useState } from "react";
 // import HookArray from "./HookArray";
 import Product from "./product/Product";
 import "./App.css";
+/*
+let me explain this commit.
+read this at the end of watching code
+in classed methods this is undefind so we should bind it in constructor like down here we did it.
+b
 
+*/
 //class component
 class App extends React.Component {
     state = {
@@ -31,6 +37,10 @@ class App extends React.Component {
             },
         ],
     };
+    constructor() {
+        super();
+        this.reducePrice2 = this.reducePrice2.bind(this);
+    }
     //question why we can't use simple method for this?
     reducePrice = () => {
         this.setState({
@@ -60,6 +70,8 @@ class App extends React.Component {
     };
     //let's try this.
     reducePrice2() {
+        console.log(this);
+
         this.setState({
             products: [
                 {
