@@ -1,0 +1,14 @@
+.product {
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 15px;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.product p,
+h1 {
+    margin: 10px;
+}
