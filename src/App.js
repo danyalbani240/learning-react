@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import HookCounter from "./HookCounter";
-import HookObject from "./HookObject";
-import HookArray from "./HookArray";
+// import HookCounter from "./HookCounter";
+// import HookObject from "./HookObject";
+// import HookArray from "./HookArray";
 import Product from "./product/Product";
 import "./App.css";
 
@@ -59,7 +59,7 @@ class App extends React.Component {
     };
     render() {
         return (
-            <div className="pass">
+            <div className="container">
                 <h1>Products</h1>
                 {this.state.products.map((product) => {
                     return (
