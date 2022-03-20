@@ -1,14 +1,12 @@
 // import "./product.css";
 import styles from "./product.module.css";
-//simple using fargment
-import { Fragment } from "react";
 const Product = (props) => {
     return (
-        <Fragment>
+        <div className={styles.product} onClick={props.click}>
             <h1> {props.title}</h1>
             <p>{props.price}</p>
             <p>{props.children}</p>
-        </Fragment>
+        </div>
     );
 };
 export default Product;
