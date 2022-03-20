@@ -32,7 +32,8 @@ class App extends React.Component {
         ],
     };
 
-    reducePrice = () => {
+    reducePrice = (id) => {
+        console.log(id);
         this.setState({
             products: [
                 {
@@ -74,7 +75,7 @@ class App extends React.Component {
                         </Product>
                     );
                 })}
-                <button onClick={this.reducePrice}>Offer</button>
+                <button onClick={this.reducePrice.bind(this, 2)}>Offer</button>
             </div>
         );
     }
