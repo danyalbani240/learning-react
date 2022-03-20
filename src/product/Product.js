@@ -2,7 +2,7 @@
 import styles from "./product.module.css";
 const Product = (props) => {
     return (
-        <div className={styles.product}>
+        <div className={styles.product} onClick={props.click}>
             <h1> {props.title}</h1>
             <p>{props.price}</p>
             <p>{props.children}</p>

@@ -32,8 +32,7 @@ class App extends React.Component {
         ],
     };
 
-    reducePrice = (id) => {
-        console.log(id);
+    reducePrice = () => {
         this.setState({
             products: [
                 {
@@ -67,6 +66,7 @@ class App extends React.Component {
                 {this.state.products.map((product) => {
                     return (
                         <Product
+                            click={this.reducePrice}
                             key={product.title}
                             price={product.price}
                             title={product.title}
