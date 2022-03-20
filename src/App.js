@@ -75,7 +75,7 @@ class App extends React.Component {
                         </Product>
                     );
                 })}
-                <button onClick={this.reducePrice.bind(this, 2)}>Offer</button>
+                <button onClick={() => this.reducePrice(2)}>Offer</button>
             </div>
         );
     }
