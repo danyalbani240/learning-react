@@ -3,6 +3,7 @@ import HookCounter from "./HookCounter";
 import HookObject from "./HookObject";
 import HookArray from "./HookArray";
 import Product from "./product/Product";
+import ProductList from "./product-list/ProductList";
 import "./App.css";
 
 //class component
@@ -63,18 +64,8 @@ class App extends React.Component {
         return (
             <div className="container">
                 <h1>Products</h1>
-                {this.state.products.map((product) => {
-                    return (
-                        <Product
-                            click={this.reducePrice}
-                            key={product.title}
-                            price={product.price}
-                            title={product.title}
-                        >
-                            this is a good {product.title}
-                        </Product>
-                    );
-                })}
+                <ProductList products={this.state.products} />
+
                 <button onClick={() => this.reducePrice(2)}>Offer</button>
             </div>
         );
