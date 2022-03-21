@@ -65,8 +65,6 @@ class App extends React.Component {
             <div className="container">
                 <h1>Products</h1>
                 <ProductList products={this.state.products} />
-
-                <button onClick={() => this.reducePrice(2)}>Offer</button>
             </div>
         );
     }
