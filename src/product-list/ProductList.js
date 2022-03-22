@@ -20,6 +20,31 @@ import { Component } from "react";
 // };
 
 class ProductList extends Component {
+    state = {
+        products: [
+            {
+                price: "200$",
+                title: "javascript course",
+            },
+            {
+                price: "300$",
+                title: "Vue course",
+            },
+            {
+                price: "400$",
+                title: "Nuxt course",
+            },
+            {
+                price: "500$",
+                title: "Pwa course",
+            },
+            {
+                price: "600$",
+                title: "Design Pattern course",
+            },
+        ],
+    };
+
     handleDelete = (event, product) => {
         let index = this.props.products.findIndex(
             (item) => item.title === product.title
