@@ -45,23 +45,22 @@ class ProductList extends Component {
         ],
     };
 
-    handleDelete = (event, product) => {
-        let index = this.props.products.findIndex(
-            (item) => item.title === product.title
+    handleDelete = (product) => {
+        console.log(product);
+        let filteredProducts = this.state.products.filter(
+            (item) => item.title != product.title
         );
-        event.currentTarget.parentNode.parentNode.removeChild(
-            event.currentTarget.parentNode
-        );
-
-        this.props.products.splice(index, index + 1);
+        this.setState({
+            products: filteredProducts,
+        });
     };
     render() {
         return (
             <Fragment>
-                {this.props.products.map((product) => {
+                {this.state.products.map((product) => {
                     return (
                         <Product
-                            delete={(e) => this.handleDelete(e, product)}
+                            delete={(e) => this.handleDelete(product)}
                             key={product.title}
                             price={product.price}
                             title={product.title}

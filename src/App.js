@@ -8,36 +8,11 @@ import "./App.css";
 
 //class component
 class App extends React.Component {
-    state = {
-        products: [
-            {
-                price: "200$",
-                title: "javascript course",
-            },
-            {
-                price: "300$",
-                title: "Vue course",
-            },
-            {
-                price: "400$",
-                title: "Nuxt course",
-            },
-            {
-                price: "500$",
-                title: "Pwa course",
-            },
-            {
-                price: "600$",
-                title: "Design Pattern course",
-            },
-        ],
-    };
-
     render() {
         return (
             <div className="container">
                 <h1>Products</h1>
-                <ProductList products={this.state.products} />
+                <ProductList />
             </div>
         );
     }
