@@ -24,7 +24,9 @@ class ProductList extends Component {
         let index = this.props.products.findIndex(
             (item) => item.title === product.title
         );
-        event.currentTarget.parentNode.removeChild(event.currentTarget);
+        event.currentTarget.parentNode.parentNode.removeChild(
+            event.currentTarget.parentNode
+        );
 
         this.props.products.splice(index, index + 1);
     };
