@@ -4,28 +4,28 @@ import { BiTrash } from "react-icons/bi";
 const Product = (props) => {
 	return (
 		<div className={styles.product}>
-			<h1>product name: {props.title}</h1>
-			<p>product-price:{props.price}</p>
-			<p className={styles.badge}> {props.number}</p>
+			<h1>product name: {props.product.title}</h1>
+			<p>product-price:{props.product.price}</p>
+			<p className={styles.badge}> {props.product.number}</p>
 
-			<button className={styles.button} onClick={props.increment}>
+			<button className={styles.button} onClick={props.onIncrement}>
 				+
 			</button>
 			<button
 				className={`${styles.button} ${
-					!(props.number === 1) && styles.remove
+					props.product.number === 1 && styles.remove
 				}`}
-				onClick={props.decrement}
+				onClick={props.onDecrement}
 			>
-				{props.number === 1 ? <BiTrash /> : "-"}
+				{props.product.number === 1 ? <BiTrash /> : "-"}
 			</button>
 			<input
 				type="text"
-				onChange={props.updateTitle}
-				value={props.title}
+				onChange={props.onChange}
+				value={props.product.title}
 				className={styles.titleChanger}
 			/>
-			<button className={styles.button} onClick={props.delete}>
+			<button className={styles.button} onClick={props.onDelete}>
 				delete
 			</button>
 		</div>
