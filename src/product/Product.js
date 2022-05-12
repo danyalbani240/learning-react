@@ -13,7 +13,7 @@ const Product = (props) => {
 			</button>
 			<button
 				className={`${styles.button} ${
-					props.number === 1 ? styles.remove : null
+					!(props.number === 1) && styles.remove
 				}`}
 				onClick={props.decrement}
 			>
