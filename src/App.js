@@ -66,21 +66,16 @@ class App extends React.Component {
 		});
 	};
 	decrementProduct = (product) => {
-		if (product.number === 1) {
-			this.handleDelete(product);
-			return;
-		}
-		let productNewNum = --product.number;
-		let newProduct = { ...product, number: productNewNum };
-		// my way of adding decrement button
-		let newProducts = [
-			...this.state.products.filter(
-				(item) => item.title !== product.title
-			),
-			newProduct,
-		];
+		let newProduct = { ...product };
+		newProduct["number"] = product.number - 1;
+		//findIndex
+		let index = this.state.products.findIndex(
+			(item) => item.id === product.id
+		);
+		let productsClone = [...this.state.products];
+		productsClone.splice(index, 1, newProduct);
 		this.setState({
-			product: newProducts,
+			products: productsClone,
 		});
 	};
 
