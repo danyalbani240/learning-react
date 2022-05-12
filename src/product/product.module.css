@@ -55,3 +55,28 @@ h1 {
     color: red;
     border: 1px solid red;
 }
+@media(max-width:800px){
+    .product{
+        flex-direction: column;
+        position: relative;
+        min-height: 200px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .badge{
+        position: absolute;
+        left: 5px;
+        top: 5px;
+    }
+    .button{
+        display: inline-block;
+    }
+    .change{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .titleChanger{
+        padding: 10px;
+    }
+}
