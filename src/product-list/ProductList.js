@@ -61,6 +61,25 @@ class ProductList extends Component {
 			product: newProducts,
 		});
 	};
+	decrementProduct = (product) => {
+		if (product.number == 1) {
+			this.handleDelete(product);
+			return;
+		}
+		let productNewNum = --product.number;
+		let newProduct = { ...product, number: productNewNum };
+		// my way of adding decrement button
+		let newProducts = [
+			...this.state.products.filter(
+				(item) => item.title != product.title
+			),
+			newProduct,
+		];
+		this.setState({
+			product: newProducts,
+		});
+	};
+
 	handleChange = (event, product) => {
 		let products = [...this.state.products];
 		let selectedProductIndex = products.findIndex(
@@ -81,6 +100,7 @@ class ProductList extends Component {
 							title={product.title}
 							number={product.number}
 							increment={() => this.incrementProduct(product)}
+							decrement={() => this.decrementProduct(product)}
 							updateTitle={(event) => {
 								this.handleChange(event, product);
 							}}

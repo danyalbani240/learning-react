@@ -6,6 +6,9 @@ const Product = (props) => {
 			<h1>product name: {props.title}</h1>
 			<p>product-price:{props.price}</p>
 			<p>number: {props.number}</p>
+			<button className={styles.button} onClick={props.decrement}>
+				decrement
+			</button>
 			<button className={styles.button} onClick={props.increment}>
 				increment
 			</button>
