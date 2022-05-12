@@ -2,11 +2,13 @@
     border: 1px solid rgb(179, 179, 179);
     border-radius: 15px;
     max-height: 120px;
-    width: 60vw;
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 10px 0;
+    font-family: sans-serif;
+    min-height: 10vh;
 }
 .product p,
 h1 {
@@ -25,4 +27,16 @@ h1 {
 .button:hover {
     background-color: rgb(34 211 238);
     color: white;
+}
+.titleChanger{
+    padding: 5px;
+    border: 2px solid  rgb(34 211 238);
+    outline: none;
+    border-radius: 5px;
+    color: rgb(23, 111, 125);
+}
+.titleChanger:focus{
+    outline: none;
+   
+    border-color:rgb(12, 100, 113) ;
 }

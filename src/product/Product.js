@@ -13,6 +13,7 @@ const Product = (props) => {
 				type="text"
 				onChange={props.updateTitle}
 				value={props.title}
+				className={styles.titleChanger}
 			/>
 			<button className={styles.button} onClick={props.delete}>
 				delete
