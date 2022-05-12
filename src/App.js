@@ -95,7 +95,13 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<Navbar />
+				<Navbar
+					totalSum={
+						this.state.products.filter(
+							(product) => product.number >= 1
+						).length
+					}
+				/>
 				<h1>Products</h1>
 				<ProductList
 					onIncrement={this.incrementProduct}
