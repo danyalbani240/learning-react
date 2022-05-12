@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ProductList from "./product-list/ProductList";
 import Navbar from "./NavBar/Navbar";
 import "./App.css";
@@ -44,7 +44,7 @@ class App extends React.Component {
 	handleDelete = (product) => {
 		console.log(product);
 		let filteredProducts = this.state.products.filter(
-			(item) => item.title != product.title
+			(item) => item.title !== product.title
 		);
 		this.setState({
 			products: filteredProducts,
@@ -56,7 +56,7 @@ class App extends React.Component {
 		// my way of adding increment button
 		let newProducts = [
 			...this.state.products.filter(
-				(item) => item.title != product.title
+				(item) => item.title !== product.title
 			),
 			newProduct,
 		];
@@ -65,7 +65,7 @@ class App extends React.Component {
 		});
 	};
 	decrementProduct = (product) => {
-		if (product.number == 1) {
+		if (product.number === 1) {
 			this.handleDelete(product);
 			return;
 		}
@@ -74,7 +74,7 @@ class App extends React.Component {
 		// my way of adding decrement button
 		let newProducts = [
 			...this.state.products.filter(
-				(item) => item.title != product.title
+				(item) => item.title !== product.title
 			),
 			newProduct,
 		];
@@ -97,7 +97,13 @@ class App extends React.Component {
 			<div className="container">
 				<Navbar />
 				<h1>Products</h1>
-				<ProductList products={this.state.products} />
+				<ProductList
+					onIncrement={this.incrementProduct}
+					onDecrement={this.decrementProduct}
+					onDelete={this.handleDelete}
+					onChange={this.handleChange}
+					products={this.state.products}
+				/>
 			</div>
 		);
 	}
