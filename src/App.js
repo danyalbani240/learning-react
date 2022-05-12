@@ -80,14 +80,18 @@ class App extends React.Component {
 	};
 
 	handleChange = (event, product) => {
-		let products = [...this.state.products];
-		let selectedProductIndex = products.findIndex(
-			(element) => element.title === product.title
+		let index = this.state.products.findIndex(
+			(item) => item.id === product.id
 		);
-		products[selectedProductIndex].title = event.target.value;
-		this.setState({ products });
+		let clonedProduct = { ...this.state.products[index] };
+		clonedProduct.title = event.target.value;
+		let products = [...this.state.products];
+		products.splice(index, 1, clonedProduct);
+		this.setState({
+			products,
+		});
 	};
-	//
+
 	render() {
 		return (
 			<div className="container">
