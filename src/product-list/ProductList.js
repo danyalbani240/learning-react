@@ -9,26 +9,31 @@ class ProductList extends Component {
 				price: "200$",
 				title: "javascript course",
 				number: 1,
+				id: "2",
 			},
 			{
 				price: "300$",
 				title: "Vue course",
 				number: 1,
+				id: "3",
 			},
 			{
 				price: "400$",
 				title: "Nuxt course",
 				number: 1,
+				id: "4",
 			},
 			{
 				price: "500$",
 				title: "Pwa course",
 				number: 1,
+				id: "5",
 			},
 			{
 				price: "600$",
 				title: "Design Pattern course",
 				number: 1,
+				id: "6",
 			},
 		],
 	};
@@ -56,7 +61,14 @@ class ProductList extends Component {
 			product: newProducts,
 		});
 	};
-	handleChange = (product) => {};
+	handleChange = (event, product) => {
+		let products = [...this.state.products];
+		let selectedProductIndex = products.findIndex(
+			(element) => element.title === product.title
+		);
+		products[selectedProductIndex].title = event.target.value;
+		this.setState({ products });
+	};
 	render() {
 		return (
 			<Fragment>
@@ -64,13 +76,13 @@ class ProductList extends Component {
 					return (
 						<Product
 							delete={(e) => this.handleDelete(product)}
-							key={product.title}
+							key={product.id}
 							price={product.price}
 							title={product.title}
 							number={product.number}
 							increment={() => this.incrementProduct(product)}
-							updateTitle={() => {
-								this.handleChange(product);
+							updateTitle={(event) => {
+								this.handleChange(event, product);
 							}}
 						>
 							this is a good {product.title}

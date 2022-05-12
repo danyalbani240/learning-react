@@ -9,7 +9,11 @@ const Product = (props) => {
 			<button className={styles.button} onClick={props.increment}>
 				increment
 			</button>
-			<input type="text" onChange={props.updateTitle} />
+			<input
+				type="text"
+				onChange={props.updateTitle}
+				value={props.title}
+			/>
 			<button className={styles.button} onClick={props.delete}>
 				delete
 			</button>
