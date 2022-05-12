@@ -17,11 +17,12 @@ h1 {
 .button {
     background-color: transparent;
     border: 1px solid rgb(34 211 238);
-    padding: 5px 10px;
+    padding: 5px 10px;  
     border-radius: 5px;
     cursor: pointer;
     margin: 0 5px;
-    color: rgb(34 211 238);
+    color: rgb(23, 111, 125);
+    font-size: 15px;
     transition: 0.5s all ease;
 }
 .button:hover {
@@ -39,4 +40,14 @@ h1 {
     outline: none;
    
     border-color:rgb(12, 100, 113) ;
+}
+.badge{
+    background-color: rgba(34, 211, 238, 0.675);
+    color: white; 
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
 }

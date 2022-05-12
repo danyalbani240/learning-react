@@ -5,12 +5,13 @@ const Product = (props) => {
 		<div className={styles.product}>
 			<h1>product name: {props.title}</h1>
 			<p>product-price:{props.price}</p>
-			<p>number: {props.number}</p>
-			<button className={styles.button} onClick={props.decrement}>
-				decrement
-			</button>
+			<p className={styles.badge}> {props.number}</p>
+
 			<button className={styles.button} onClick={props.increment}>
-				increment
+				+
+			</button>
+			<button className={styles.button} onClick={props.decrement}>
+				-
 			</button>
 			<input
 				type="text"
