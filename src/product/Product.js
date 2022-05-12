@@ -1,5 +1,6 @@
 // import "./product.css";
 import styles from "./product.module.css";
+import { BiTrash } from "react-icons/bi";
 const Product = (props) => {
 	return (
 		<div className={styles.product}>
@@ -10,8 +11,13 @@ const Product = (props) => {
 			<button className={styles.button} onClick={props.increment}>
 				+
 			</button>
-			<button className={styles.button} onClick={props.decrement}>
-				-
+			<button
+				className={`${styles.button} ${
+					props.number === 1 ? styles.remove : null
+				}`}
+				onClick={props.decrement}
+			>
+				{props.number === 1 ? <BiTrash /> : "-"}
 			</button>
 			<input
 				type="text"
