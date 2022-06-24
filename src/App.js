@@ -66,6 +66,10 @@ class App extends React.Component {
 		});
 	};
 	decrementProduct = (product) => {
+		if (product.number == 1) {
+			this.handleDelete(product);
+			return;
+		}
 		let newProduct = { ...product };
 		newProduct["number"] = product.number - 1;
 		//findIndex
