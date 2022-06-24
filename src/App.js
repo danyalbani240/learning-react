@@ -97,7 +97,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				{/* <Navbar
+				<Navbar
 					totalSum={
 						this.state.products.filter(
 							(product) => product.number >= 1
@@ -111,9 +111,7 @@ class App extends React.Component {
 					onDelete={this.handleDelete}
 					onChange={this.handleChange}
 					products={this.state.products}
-				/> */}
-				<HookCounter />
-				<HoverCounter />
+				/>
 			</div>
 		);
 	}

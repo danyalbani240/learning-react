@@ -1,6 +1,10 @@
 import { useState } from "react";
 import withCounter from "./withCounter";
-const HookCounter = ({ count, addOne }) => {
+const HookCounter = () => {
+	const [count, setCount] = useState(0);
+	const addOne = () => {
+		setCount((old) => old + 1);
+	};
 	return (
 		<div className="hook-counter">
 			<h2>count - {count}</h2>
@@ -8,4 +12,4 @@ const HookCounter = ({ count, addOne }) => {
 		</div>
 	);
 };
-export default withCounter(HookCounter);
+export default HookCounter;
