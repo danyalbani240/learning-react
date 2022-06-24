@@ -1,5 +1,4 @@
 import { useState } from "react";
-import withCounter from "./withCounter";
 const HookCounter = () => {
 	const [count, setCount] = useState(0);
 	const addOne = () => {

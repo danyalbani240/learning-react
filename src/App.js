@@ -1,8 +1,7 @@
 import React from "react";
-// import ProductList from "./product-list/ProductList";
-// import Navbar from "./NavBar/Navbar";
-import HookCounter from "./HookCounter";
-import HoverCounter from "./HoverCounter";
+import ProductList from "./product-list/ProductList";
+import Navbar from "./NavBar/Navbar";
+import Parent from "./pure/Parent";
 import "./App.css";
 
 //class component
@@ -96,23 +95,24 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className="container">
-				<Navbar
-					totalSum={
-						this.state.products.filter(
-							(product) => product.number >= 1
-						).length
-					}
-				/>
-				<h1>Products</h1>
-				<ProductList
-					onIncrement={this.incrementProduct}
-					onDecrement={this.decrementProduct}
-					onDelete={this.handleDelete}
-					onChange={this.handleChange}
-					products={this.state.products}
-				/>
-			</div>
+			// <div className="container">
+			// 	<Navbar
+			// 		totalSum={
+			// 			this.state.products.filter(
+			// 				(product) => product.number >= 1
+			// 			).length
+			// 		}
+			// 	/>
+			// 	<h1>Products</h1>
+			// 	<ProductList
+			// 		onIncrement={this.incrementProduct}
+			// 		onDecrement={this.decrementProduct}
+			// 		onDelete={this.handleDelete}
+			// 		onChange={this.handleChange}
+			// 		products={this.state.products}
+			// 	/>
+			// </div>
+			<Parent />
 		);
 	}
 }
