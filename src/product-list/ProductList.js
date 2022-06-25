@@ -32,8 +32,7 @@ import {
 
 const ProductList = () => {
 	const products = useProducts();
-	const { handleChange, handleDelete, decrementProduct, incrementProduct } =
-		useProductsActions();
+	const dispatch = useProductsActions();
 	return (
 		<Fragment>
 			{products.map((product) => {
@@ -41,10 +40,22 @@ const ProductList = () => {
 					<Product
 						key={product.id}
 						product={product}
-						onIncrement={() => incrementProduct(product)}
-						onDecrement={() => decrementProduct(product)}
-						onDelete={() => handleDelete(product)}
-						onChange={(e) => handleChange(e, product)}
+						onIncrement={() =>
+							dispatch({ type: "increment", id: product.id })
+						}
+						onDecrement={() =>
+							dispatch({ type: "decrement", id: product.id })
+						}
+						onDelete={() =>
+							dispatch({ type: "delete", id: product.id })
+						}
+						onChange={(e) =>
+							dispatch({
+								type: "change",
+								id: product.id,
+								event: e,
+							})
+						}
 					/>
 				);
 			})}
