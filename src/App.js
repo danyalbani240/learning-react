@@ -1,8 +1,8 @@
-import React from "react";
+import React, { createContext } from "react";
 import ProductList from "./product-list/ProductList";
 import Navbar from "./NavBar/Navbar";
 import "./App.css";
-
+export const UserContext = createContext();
 //class component
 class App extends React.Component {
 	state = {
@@ -98,25 +98,29 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className="container">
-				<Navbar
-					totalSum={
-						this.state.products.filter(
-							(product) => product.number >= 1
-						).length
-					}
-				/>
-				<h1>Products</h1>
-				<ProductList
-					onIncrement={this.incrementProduct}
-					onDecrement={this.decrementProduct}
-					onDelete={this.handleDelete}
-					onChange={this.handleChange}
-					products={this.state.products}
-				/>
-			</div>
+			<UserContext.Provider
+				value={{ firstName: "danyal", lastName: "bani" }}
+			>
+				<div className="container">
+					<Navbar
+						totalSum={
+							this.state.products.filter(
+								(product) => product.number >= 1
+							).length
+						}
+					/>
+					<h1>Products</h1>
+					<ProductList
+						onIncrement={this.incrementProduct}
+						onDecrement={this.decrementProduct}
+						onDelete={this.handleDelete}
+						onChange={this.handleChange}
+						products={this.state.products}
+					/>
+				</div>
+			</UserContext.Provider>
 		);
 	}
 }
 
-export default App;
+export { App };

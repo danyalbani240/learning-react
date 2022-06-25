@@ -1,7 +1,12 @@
 // import "./product.css";
 import styles from "./product.module.css";
 import { BiTrash } from "react-icons/bi";
+import { useContext, useEffect } from "react";
+import { UserContext } from "../App";
+
 const Product = (props) => {
+	console.log({ ...useContext(UserContext) });
+
 	return (
 		<div className={styles.product}>
 			<h2>product name: {props.product.title}</h2>
