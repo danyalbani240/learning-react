@@ -2,8 +2,6 @@ import React from "react";
 import ProductList from "./product-list/ProductList";
 import Navbar from "./NavBar/Navbar";
 import "./App.css";
-import CountOne from "./Context/CountOne";
-import CounterProvider from "./Context/CounterProvider";
 
 //class component
 class App extends React.Component {
@@ -101,7 +99,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				{/* <Navbar
+				<Navbar
 					totalSum={
 						this.state.products.filter(
 							(product) => product.number >= 1
@@ -115,10 +113,7 @@ class App extends React.Component {
 					onDelete={this.handleDelete}
 					onChange={this.handleChange}
 					products={this.state.products}
-				/> */}
-				<CounterProvider>
-					<CountOne />
-				</CounterProvider>
+				/>
 			</div>
 		);
 	}
