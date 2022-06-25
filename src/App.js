@@ -2,7 +2,6 @@ import React from "react";
 import ProductList from "./product-list/ProductList";
 import Navbar from "./NavBar/Navbar";
 import "./App.css";
-import ReducerCount from "./Reducer/ReducerCount";
 
 //class component
 class App extends React.Component {
@@ -100,8 +99,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<ReducerCount />
-				{/* <Navbar
+				<Navbar
 					totalSum={
 						this.state.products.filter(
 							(product) => product.number >= 1
@@ -115,7 +113,7 @@ class App extends React.Component {
 					onDelete={this.handleDelete}
 					onChange={this.handleChange}
 					products={this.state.products}
-				/> */}
+				/>
 			</div>
 		);
 	}
