@@ -1,10 +1,10 @@
 .product {
-    border: 1px solid rgb(179, 179, 179);
+    border: 1px solid #E29CE5;
     border-radius: 15px;
-    max-height: 120px;
-    width: 90%;
+    height: 120px;
+    width: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 10px 0;
     font-family: sans-serif;
@@ -14,36 +14,48 @@
 h1 {
     margin: 10px;
 }
+.product h2{
+    color:#AE3BCB   ;
+}
 .button {
     background-color: transparent;
-    border: 1px solid rgb(34 211 238);
+    border: 2px solid #E29CE5;
     padding: 5px 10px;  
     border-radius: 5px;
     cursor: pointer;
     margin: 0 5px;
-    color: rgb(23, 111, 125);
+    color: rgb(174, 59, 203);
     font-size: 15px;
     transition: 0.5s all ease;
+    height: 35px;
 }
 .button:hover {
-    background-color: rgb(34 211 238);
+    background-color: #CB6CD8;
     color: white;
 }
+.price{
+    color: #AE3BCB;
+    font-size: 17px;
+}
 .titleChanger{
-    padding: 5px;
-    border: 2px solid  rgb(34 211 238);
+    padding: 0 7px;
+    border: 2px solid  #E29CE5;
     outline: none;
     border-radius: 5px;
-    color: rgb(23, 111, 125);
+    transition: all ease 0.5s;
+    height: 35px;
+    font-size: 17px;
+    color: rgb(174, 59, 203);
+    font-weight: 700;
 }
 .titleChanger:focus{
     outline: none;
    
-    border-color:rgb(12, 100, 113) ;
+    border-color:#7E2A9F ;
 }
 .badge{
-    background-color: rgba(34, 211, 238, 0.675);
-    color: white; 
+    background-color: #CB6CD8;
+    color: #F8E4F6; 
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -51,9 +63,19 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+.change{
+    display:  flex;
+    align-items: center;
+}
 .remove{
     color: red;
-    border: 1px solid red;
+    border: 2px solid red;
+    height: 35px;
+}
+.remove:hover {
+    color: white;
+    border: 2px solid #E29CE5;
+
 }
 @media(max-width:800px){
     .product{

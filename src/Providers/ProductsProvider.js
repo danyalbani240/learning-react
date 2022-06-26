@@ -3,6 +3,43 @@ import { createContext, useContext, useReducer, useState } from "react";
 const ProductsContext = createContext();
 const ProductsContextDispatch = createContext();
 const ProductsProvider = ({ children }) => {
+	const AllProducts = [
+		{
+			price: "200$",
+			title: "javascript course",
+			number: 1,
+			id: "1",
+			availableSizes: ["XL"],
+		},
+		{
+			price: "300$",
+			title: "Vue course",
+			number: 1,
+			id: "2",
+			availableSizes: ["XXL"],
+		},
+		{
+			price: "400$",
+			title: "Nuxt course",
+			number: 1,
+			id: "3",
+			availableSizes: ["L"],
+		},
+		{
+			price: "500$",
+			title: "Pwa course",
+			number: 1,
+			id: "4",
+			availableSizes: ["XL", "XXL"],
+		},
+		{
+			price: "600$",
+			title: "Design Pattern course",
+			number: 1,
+			id: "5",
+			availableSizes: ["L", "XXL"],
+		},
+	];
 	const [products, dispatch] = useReducer(
 		(state, action) => {
 			switch (action.type) {
@@ -55,40 +92,20 @@ const ProductsProvider = ({ children }) => {
 					updatedProducts[index] = clonedProduct;
 					return updatedProducts;
 				}
+				case "filter": {
+					if (action.event.target.value === "All") {
+						return AllProducts;
+					} else {
+						return AllProducts.filter((product) =>
+							product.availableSizes.includes(
+								action.event.target.value
+							)
+						);
+					}
+				}
 			}
 		},
-		[
-			{
-				price: "200$",
-				title: "javascript course",
-				number: 1,
-				id: "2",
-			},
-			{
-				price: "300$",
-				title: "Vue course",
-				number: 1,
-				id: "3",
-			},
-			{
-				price: "400$",
-				title: "Nuxt course",
-				number: 1,
-				id: "4",
-			},
-			{
-				price: "500$",
-				title: "Pwa course",
-				number: 1,
-				id: "5",
-			},
-			{
-				price: "600$",
-				title: "Design Pattern course",
-				number: 1,
-				id: "6",
-			},
-		]
+		[...AllProducts]
 	);
 	return (
 		<ProductsContext.Provider value={products}>

@@ -5,7 +5,7 @@ const Product = (props) => {
 	return (
 		<div className={styles.product}>
 			<h2>product name: {props.product.title}</h2>
-			<p>product-price:{props.product.price}</p>
+			<p className={styles.price}>product-price:{props.product.price}</p>
 			<p className={styles.badge}> {props.product.number}</p>
 
 			<div className={styles.change}>
