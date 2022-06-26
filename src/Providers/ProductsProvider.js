@@ -93,12 +93,12 @@ const ProductsProvider = ({ children }) => {
 					return updatedProducts;
 				}
 				case "filter": {
-					if (action.event.target.value === "All") {
+					if (action.selectedOption === "All") {
 						return AllProducts;
 					} else {
 						return AllProducts.filter((product) =>
 							product.availableSizes.includes(
-								action.event.target.value
+								action.selectedOption
 							)
 						);
 					}

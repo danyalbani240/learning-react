@@ -1,0 +1,20 @@
+.filterContainer{
+   
+        margin: 10px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    
+}
+.size{
+        display: flex;
+        align-items: center ;
+        margin-left: 120px;
+}
+.size p{
+    font-size: 18px;
+    margin-right: 20px;
+}
+.selectContainer{
+    width: 300px;
+}
