@@ -6,14 +6,12 @@ import ProductsProvider, {
 	useProducts,
 	useProductsActions,
 } from "./components/Providers/ProductsProvider";
-import Filter from "./components/Filter/Filter";
-import Search from "./common/Search/Search";
+import Filter from "./common/Filter/Filter";
 const App = () => {
 	return (
 		<div className="container">
 			<ProductsProvider>
 				<Navbar />
-				<Search />
 				<Filter />
 				<h1 style={{ color: "#AE3BCB" }}>Products</h1>
 				<ProductList />

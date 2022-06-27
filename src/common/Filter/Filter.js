@@ -1,10 +1,13 @@
-import { useProductsActions } from "../Providers/ProductsProvider";
+import { useProductsActions } from "../../components/Providers/ProductsProvider";
 import Select from "react-select";
 import styles from "./filter.module.css";
 import { useEffect, useState } from "react";
+import Search from "../Search/Search";
+
 const Filter = () => {
 	let [value, setValue] = useState("All");
 	let [sort, setSort] = useState("lowest");
+	let [searched, setSearched] = useState("");
 	const dispatch = useProductsActions();
 	const changeHandler = (selectedOption) => {
 		setValue(selectedOption.value);
@@ -18,6 +21,7 @@ const Filter = () => {
 				selectedOption: sort,
 			});
 		}
+		dispatch({ type: "search", searchedText: searched });
 	};
 	const sortHandler = (selectedOption) => {
 		setSort(selectedOption.value);
@@ -63,45 +67,51 @@ const Filter = () => {
 			fontSize: "18px",
 		}),
 	};
+	const handleSearch = (typed) => {
+		setSearched(typed);
+	};
 	return (
-		<div className={styles.filterContainer}>
-			<h4>Filter By :</h4>
-			<div className={styles.size}>
-				<p>Size:</p>
-				<div className={styles.selectContainer}>
-					<Select
-						defaultValue={"All"}
-						styles={style}
-						options={options}
-						onChange={changeHandler}
-						value={value}
-						isSearchable={false}
-						placeholder={value}
-						theme={theme}
-					/>
+		<div>
+			<Search onChange={handleSearch} filterValue={value} />
+			<div className={styles.filterContainer}>
+				<h4>Filter By :</h4>
+				<div className={styles.size}>
+					<p>Size:</p>
+					<div className={styles.selectContainer}>
+						<Select
+							defaultValue={"All"}
+							styles={style}
+							options={options}
+							onChange={changeHandler}
+							value={value}
+							isSearchable={false}
+							placeholder={value}
+							theme={theme}
+						/>
+					</div>
 				</div>
-			</div>
-			<div className={styles.size}>
-				<p>price:</p>
-				<div className={styles.selectContainer}>
-					<Select
-						styles={style}
-						options={[
-							{
-								label: "lowest",
-								value: "lowest",
-							},
-							{
-								label: "highest",
-								value: "highest",
-							},
-						]}
-						onChange={sortHandler}
-						value={sort}
-						isSearchable={false}
-						placeholder={sort}
-						theme={theme}
-					/>
+				<div className={styles.size}>
+					<p>price:</p>
+					<div className={styles.selectContainer}>
+						<Select
+							styles={style}
+							options={[
+								{
+									label: "lowest",
+									value: "lowest",
+								},
+								{
+									label: "highest",
+									value: "highest",
+								},
+							]}
+							onChange={sortHandler}
+							value={sort}
+							isSearchable={false}
+							placeholder={sort}
+							theme={theme}
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

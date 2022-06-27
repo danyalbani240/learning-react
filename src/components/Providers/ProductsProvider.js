@@ -116,6 +116,15 @@ const ProductsProvider = ({ children }) => {
 						return [...state];
 					}
 				}
+				case "search": {
+					if (action.searchedText.trim() === "") {
+						return state;
+					}
+
+					return state.filter((item) =>
+						item.title.includes(action.searchedText)
+					);
+				}
 			}
 		},
 		[...AllProducts]
