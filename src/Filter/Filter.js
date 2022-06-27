@@ -3,8 +3,8 @@ import Select from "react-select";
 import styles from "./filter.module.css";
 import { useEffect, useState } from "react";
 const Filter = () => {
-	let [value, setValue] = useState("");
-	let [sort, setSort] = useState("");
+	let [value, setValue] = useState("All");
+	let [sort, setSort] = useState("lowest");
 	const dispatch = useProductsActions();
 	const changeHandler = (selectedOption) => {
 		setValue(selectedOption.value);
@@ -21,15 +21,15 @@ const Filter = () => {
 	};
 	const sortHandler = (selectedOption) => {
 		setSort(selectedOption.value);
+		dispatch({
+			type: "sort",
+			selectedOption: selectedOption.value,
+		});
 	};
-	useEffect(() => {
-		if (sort !== "") {
-			dispatch({
-				type: "sort",
-				selectedOption: sort,
-			});
-		}
-	}, [sort]);
+	// useEffect(() => {
+	// 	if (sort !== "") {
+	// 	}
+	// }, [sort]);
 	const options = [
 		{
 			label: "All",
@@ -65,17 +65,17 @@ const Filter = () => {
 				</div>
 			</div>
 			<div className={styles.size}>
-				<p>Size:</p>
+				<p>price:</p>
 				<div className={styles.selectContainer}>
 					<Select
 						options={[
 							{
-								label: "highest",
-								value: "highest",
-							},
-							{
 								label: "lowest",
 								value: "lowest",
+							},
+							{
+								label: "highest",
+								value: "highest",
 							},
 						]}
 						onChange={sortHandler}
