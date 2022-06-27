@@ -1,0 +1,17 @@
+.searchinput{
+    padding: 10px;
+    border: solid 2px #F2CCF0;
+    transition: 0.3s ease all;
+}
+
+.searchinput:focus{
+    outline-color: #CB6CD8;
+
+}
+.container{
+    margin-top: 5px;
+
+}
+.container label{
+    margin-right: 5px;
+}
