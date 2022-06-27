@@ -5,35 +5,35 @@ const ProductsContextDispatch = createContext();
 const ProductsProvider = ({ children }) => {
 	const AllProducts = [
 		{
-			price: "200$",
+			price: 200,
 			title: "javascript course",
 			number: 1,
 			id: "1",
 			availableSizes: ["XL"],
 		},
 		{
-			price: "300$",
+			price: 300,
 			title: "Vue course",
 			number: 1,
 			id: "2",
 			availableSizes: ["XXL"],
 		},
 		{
-			price: "400$",
+			price: 400,
 			title: "Nuxt course",
 			number: 1,
 			id: "3",
 			availableSizes: ["L"],
 		},
 		{
-			price: "500$",
+			price: 500,
 			title: "Pwa course",
 			number: 1,
 			id: "4",
 			availableSizes: ["XL", "XXL"],
 		},
 		{
-			price: "600$",
+			price: 600,
 			title: "Design Pattern course",
 			number: 1,
 			id: "5",
@@ -94,13 +94,26 @@ const ProductsProvider = ({ children }) => {
 				}
 				case "filter": {
 					if (action.selectedOption === "All") {
-						return AllProducts;
+						return [...AllProducts];
 					} else {
 						return AllProducts.filter((product) =>
 							product.availableSizes.includes(
 								action.selectedOption
 							)
 						);
+					}
+				}
+				case "sort": {
+					const products = [...state];
+
+					if (action.selectedOption === "lowest") {
+						return products.sort((a, b) => a.price - b.price);
+					} else if (action.selectedOption === "highest") {
+						return products
+							.sort((a, b) => a.price - b.price)
+							.reverse();
+					} else {
+						return [...state];
 					}
 				}
 			}
